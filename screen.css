@@ -44,7 +44,7 @@ h1 {
         overflow-y: auto;
 		position:absolute;
 		top:100px;
-		/*bottom:260px; */ /* uncomment bottom if you want to display ads */
+		bottom: 0px; /* make 260px if you want to display ads */
 		width: 100%;
 		left:0px;
 }

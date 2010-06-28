@@ -18,14 +18,18 @@ Ads
 ==========
 you can show ads in the left bar, sign up to adsense at http://google.com/adsense/ and then configure css:
 
-1. in screen.css, #placesContainer, uncomment:
-	/*bottom:260px; */
+1. in screen.css, #placesContainer, change:
+	bottom:0px;
+	to
+	bottom:260px
 
 2. in screen.css, #gads, remove line:
 	display: none;
 
-3. in index.php (IE fix), change #placesContainer height from 100 to 350:
+3. in index.php (IE fix), #placesContainer, change:
 	height: expression(document.body.clientHeight - 100 );
+	to
+	height: expression(document.body.clientHeight - 350 );
 
 4. enter account details in config.php
 
