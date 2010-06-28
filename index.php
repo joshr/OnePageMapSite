@@ -61,6 +61,20 @@ if(strstr($_SERVER['HTTP_USER_AGENT'],'iPhone') == false){
 
     <![endif]-->
 
+<!-- 
+
+oh hi!
+
+original code by:
+Brian Suda - http://suda.co.uk | http://twitter.com/biansuda
+Josh Russell - http://joshrussell.com | http://twitter.com/joshr
+
+and open-sourced at:
+http://github.com/joshr/onePageMapSite
+
+ -->
+
+
   </head>
   <body>
 	<div id="bar">
