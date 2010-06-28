@@ -1,0 +1,34 @@
+A simple one page site to show a google map
+
+note: mobile/iPhone detection/css needs lots of work
+
+
+API keys
+==========
+http://code.google.com/apis/maps/signup.html
+
+make sure to get your own API key for the domain you intend to use this code on. and also an API key for a dev domain if you need.
+
+enter map details in config.php
+
+
+Ads
+==========
+you can show ads in the left bar, sign up to adsense at http://google.com/adsense/ and then configure css:
+
+1. in screen.css, #placesContainer, uncomment:
+	/*bottom:260px; */
+
+2. in screen.css, #gads, remove line:
+	display: none;
+
+3. in index.php (IE fix), change #placesContainer height from 100 to 350:
+	height: expression(document.body.clientHeight - 100 );
+
+4. enter account details in config.php
+
+
+Credits
+==========
+main coding by Brian Suda, http://suda.co.uk - http://twitter.com/briansuda
+adaptations by Josh Russell, http://joshrussell.com - http://twitter.com/joshr
