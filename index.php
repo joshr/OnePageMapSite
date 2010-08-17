@@ -33,15 +33,15 @@ if(strstr($_SERVER['HTTP_USER_AGENT'],'iPhone') == false){
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title><?php echo $_CONFIG['site_title']; ?></title>
 	<!-- need favicon here -->
-	<link rel="stylesheet" href="<?php echo $_CONFIG['domain']; ?><?php echo $_CONFIG['stylesheet_url']; ?>" type="text/css" media="all" />
+
 
 <?php if (($isIPhone)): ?>
-	<link rel="stylesheet" type="text/css" href="<?php echo $_CONFIG['domain']; ?><?php echo $_CONFIG['mobile_stylesheet_url']; ?>" media="only screen and (max-device-width: 480px), only screen and (max-device-width: 320px)">
+	<link rel="stylesheet" type="text/css" href="<?php echo $_CONFIG['domain']; ?><?php echo $_CONFIG['mobile_stylesheet_url']; ?>">
 	<link rel="apple-touch-icon" href="<?php echo $_CONFIG['domain']; ?>/apple-touch-icon.png">
 	<link rel="apple-touch-startup-image" href="<?php echo $_CONFIG['domain']; ?>/apple-touch-startup-image.png">
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no">
 <?php else: ?>
-
+	<link rel="stylesheet" href="<?php echo $_CONFIG['domain']; ?><?php echo $_CONFIG['stylesheet_url']; ?>" type="text/css" media="all" />
 <!-- put any non-iphone stuff here -->
 
 <?php endif; ?>
@@ -92,7 +92,7 @@ http://github.com/joshr/onePageMapSite
 			// create static map!
 			$markers = getMarkers($xml);
 
-			echo '<img id="mapimg" src="http://maps.google.com/staticmap?center='.$centerPoint.'&type='.$mapType.'&zoom='.$zoomLevel.'&size=320x200&maptype=map&key='.$GMapKey.'&markers='.$markers.'" alt="Kort"/>';
+			echo '<a href="'.$editMapLink.'"><img id="mapimg" src="http://maps.google.com/staticmap?center='.$centerPoint.'&type='.$mapType.'&zoom='.$mobileZoomLevel.'&size=640x400&maptype=map&key='.$GMapKey.'&markers='.$markers.'" alt="Kort"/></a>';
 			
 		}
 	?>
@@ -105,6 +105,30 @@ http://github.com/joshr/onePageMapSite
 				?>
 			</ul> <!-- /places -->
 		</div> <!-- /placesContainer -->
+
+		<?php if (($isIPhone)): ?>
+			<!-- mobile ads, eventually -->
+
+		<div id="gads"><script type="text/javascript"><!--
+			window.googleAfmcRequest = {
+  				client: 'ca-mb-<?php echo $_CONFIG['google_ad_client']; ?>',
+  				ad_type: 'text_image',
+  				output: 'html',
+  				channel: '',
+  				format: '320x50_mb',
+  				oe: 'utf8',
+  				color_border: '336699',
+  				color_bg: 'FFFFFF',
+  				color_link: '0000FF',
+  				color_text: '000000',
+  				color_url: '008000',
+			};
+			//--></script>
+			<script type="text/javascript" 
+   			src="http://pagead2.googlesyndication.com/pagead/show_afmc_ads.js"></script>
+		</div> <!-- /gads -->
+
+		<?php else: ?>
 		<div id="gads"><script type="text/javascript"><!--
 		google_ad_client = "<?php echo $_CONFIG['google_ad_client']; ?>";
 		/* 250x250, created 5/26/10 */
@@ -116,6 +140,8 @@ http://github.com/joshr/onePageMapSite
 		<script type="text/javascript"
 		src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 		</script></div> <!-- /gads -->
+		<?php endif; ?>
+
 	</div> <!-- /bar -->
 	<!--<p><a href="<?=str_replace('&','&amp;',$kmlLink)?>">Download KML</a></p>-->
 	
