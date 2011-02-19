@@ -4,17 +4,16 @@ $_CONFIG = array(
 
 // map config - get api keys here: http://code.google.com/apis/maps/signup.html
 	'map_id' 					=>	'106334744368984760171.000450193d2d16b5f7142',
-//	'api_key'					=>	'',
-	'api_key'					=>	'ABQIAAAAFupcpdgTRhOJaQtWT2s-iRQAm2Oice001qADQNu_6ECYaSWggxRdNXmupXfJlFLTEraYQdE3lA1S9w',
+
 
 // map settings
-	'centerpoint'				=>	'50.828493, -0.15604',
+	'centerpoint'				=>	array('lat' => '50.828493', 'lng' => '-0.15604'),
 	'zoomlevel'					=>	'14',
 	'mobileZoomLevel'			=>	'16',
 	'maptype'					=>	'normal',
 
 // site details - change domain to match api key registered, include http://
-	'domain'					=>	'http://dev.opms.local',
+	'domain'					=>	'http://onepagemapsite.local',
 	'site_title'				=>	'@joshr\'s Geek Hangouts',
 	'site_description'			=>	'Places to work, eat, and meet in Brighton and Hove',
 	'stylesheet_url'			=>	'/screen.css',
